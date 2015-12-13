@@ -37,8 +37,8 @@ mkdir "$pdir/DNA/";
 
 my $partcount = 0;
 
-open FILE, "> ./$pdir/DNA/$filename-$partcount.ds" 
-or die "Could not open '$filename'!";
+open FILE, "> ./$pdir/DNA/$projectname-$partcount.ds" 
+or die "Could not open '$projectname'!";
 
 # Generates the DNA sequence -------------------------------------------------
 
@@ -71,7 +71,7 @@ for (my $i = 1; $i <= $size; $i++) {
             $filesize = 0;
             close FILE;
             $partcount++;
-            open FILE, "> ./$pdir/DNA/$filename-$partcount.ds" or die "Could not create next partition";
+            open FILE, "> ./$pdir/DNA/$projectname-$partcount.ds" or die "Could not create next partition";
         }
     } elsif (length($buffer) >= 1000) {
         print FILE "$buffer";

@@ -11,16 +11,21 @@ use strict;
 print "\n#########################################\n";
 print "#  Welcome to the Perl Genome Project!  #\n";
 print "#########################################\n";
-print "\n0: Create a new DNA/RNA sequence project\n";
 
+print "\n0: Create a new DNA/RNA sequence project\n";
+print "q: Quit\n";
 print "\nWhat would you like to do? ";
 
 # Options for the user -------------------------------------------------------
 while ((my $ui = <>) ne "q\n") {
-	if ($ui == "0\n"){
-		print"\nCreate Project\n";
-		sub createProject;
-	}
+    if ($ui == "0\n"){
+		print"\n\nCreate Project\n\n";
+		&createProject;
+	} else {
+        print "Not an option!";
+    }
+
+	print "\nWhat would you like to do? ";
 }
 
 # Creates a new project using input from the user for name and 
@@ -49,6 +54,6 @@ sub createProject {
 
 	print "Creating project $projectname, with sample size $size.\n";
 
-	system("perl ./scripts/Gen.pl $projectname $size");
+	system("perl ./src/SeqGen.pl $projectname $size");
 
 }
