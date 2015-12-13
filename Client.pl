@@ -15,13 +15,16 @@ print "\n0: Create a new DNA/RNA sequence project\n";
 
 print "\nWhat would you like to do? ";
 
-# Options for the user
-if (<> == "0\n"){
-    print"\nCreate Project\n";
-    sub createProject;
+# Options for the user -------------------------------------------------------
+while ((my $ui = <>) ne "q\n") {
+	if ($ui == "0\n"){
+		print"\nCreate Project\n";
+		sub createProject;
+	}
 }
 
-# Creates a new project using input from the user for name and seqence length
+# Creates a new project using input from the user for name and 
+# sequence length  -----------------------------------------------------------
 sub createProject {
     print "Project Name: ";
 	
