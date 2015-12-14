@@ -18,7 +18,7 @@ print "\nWhat would you like to do? ";
 
 # Options for the user -------------------------------------------------------
 while ((my $ui = <>) ne "q\n") {
-    if ($ui == "0\n"){
+    if ($ui eq "0\n"){
 		print"\n\nCreate Project\n\n";
 		&createProject;
 	} else {

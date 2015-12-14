@@ -24,11 +24,13 @@ if (not -d "./projects") {
 my $pdir = "./projects/project$projectname/";
 
 if (-d "$pdir") {
-    print "$projectname already exists.\n" . 
+    print "\n$projectname already exists.\n" . 
 	"Would you like to clobber it? (yes/no) ";
-    if (<STDIN> eq "no\n") {
+    if ((my $ui = <STDIN>) eq "no\n") {
         warn "Aborting due to project name already existing";
         exit;
+    } elsif ($ui ne "yes\n") {
+        print "Close enough. Clobbering.\n";
     }
 }
 
